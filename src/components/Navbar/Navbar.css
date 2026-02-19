@@ -1,0 +1,60 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 6%;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 15px;
+  margin: 0 5%;
+  width: 90%;
+  border-radius: 50px;
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.logo { font-size: 1.5rem; font-weight: 800; display: flex; align-items: center; gap: 0.5rem; }
+.nav-links ul { display: flex; list-style: none; gap: 2.5rem; }
+.nav-links a { text-decoration: none; color: var(--color-text-light); font-weight: 700; transition: color 0.3s ease; }
+.nav-links a:hover { color: var(--color-text); }
+.get-started-btn-nav {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  background: var(--gradient-button-secondary);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(253, 94, 130, 0.3);
+}
+.get-started-btn-nav:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(253, 94, 130, 0.4); }
+/* Add these styles to your existing Navbar.css file */
+
+/* --- LOGO STYLING --- */
+.logo {
+  font-size: 1.75rem; /* Make it larger */
+  font-weight: 800;   /* Make it bold and impactful */
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none; /* Remove underline from Link */
+  color: var(--color-text); /* Use the main text color from your index.css */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.logo:hover {
+  transform: scale(1.05); /* Slightly enlarge the logo on hover */
+}
+
+.logo-icon {
+  font-size: 1.5rem; /* Adjust icon size if needed */
+  /* This creates a subtle, modern background for the icon */
+  background-color: rgba(220, 220, 255, 0.6);
+  padding: 0.4rem;
+  border-radius: 10px;
+  line-height: 1; /* Helps with vertical alignment */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,88 @@
+project:
+  name: lost-and-found-portal
+  type: frontend
+  framework: React.js
+  language: TypeScript
+  build_tool: Vite
+
+root:
+  folder: lost-and-found-portal
+
+source:
+  src:
+    entry:
+      - main.tsx
+      - App.tsx
+    components:
+      Navbar:
+        type: reusable-ui
+      Registration:
+        type: form-component
+      Stats:
+        type: dashboard-widget
+      Layout.tsx:
+        role: app-shell
+    pages:
+      HomePage:
+        role: landing-page
+      Dashboard:
+        files:
+          - Dashboard.tsx
+          - Dashboard.css
+    shared:
+      types:
+        role: type-definitions
+      utils:
+        role: helper-functions
+    styles:
+      - App.css
+
+config:
+  linting: eslint
+  typescript:
+    - tsconfig.json
+    - tsconfig.app.json
+    - tsconfig.node.json
+  bundler: vite.config.ts
+
+routing:
+  library: react-router-dom
+  layout: Layout.tsx
+  routes:
+    - path: /
+      component: HomePage
+    - path: /dashboard
+      component: Dashboard
+
+state:
+  local:
+    - useState
+    - useEffect
+  global:
+    - Context API
+
+dependencies:
+  core:
+    - react
+    - react-dom
+    - react-router-dom
+  dev:
+    - typescript
+    - eslint
+
+assets:
+  html_entry: index.html
+
+ci:
+  platform: GitHub Actions
+  workflow: build-check
+  node_version: 18.x
+  steps:
+    - checkout
+    - install_dependencies: npm ci
+    - build: npm run build
+
+deployment:
+  supported:
+    - Vercel
+    - Netlify
